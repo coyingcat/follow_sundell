@@ -15,6 +15,8 @@
 		2662AA7D2459ADD000FD3014 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2662AA7B2459ADD000FD3014 /* LaunchScreen.storyboard */; };
 		2662AA882459ADD000FD3014 /* layoutDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AA872459ADD000FD3014 /* layoutDSLTests.swift */; };
 		2662AA932459ADD000FD3014 /* layoutDSLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AA922459ADD000FD3014 /* layoutDSLUITests.swift */; };
+		2662AAA22459B80D00FD3014 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */; };
+		2662AAA42459B86200FD3014 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AAA32459B86200FD3014 /* LayoutProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2662AA8E2459ADD000FD3014 /* layoutDSLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = layoutDSLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2662AA922459ADD000FD3014 /* layoutDSLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutDSLUITests.swift; sourceTree = "<group>"; };
 		2662AA942459ADD000FD3014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		2662AAA32459B86200FD3014 /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		2662AA6F2459ADCB00FD3014 /* layoutDSL */ = {
 			isa = PBXGroup;
 			children = (
+				2662AAA02459B7F900FD3014 /* Layout */,
 				2662AA702459ADCB00FD3014 /* AppDelegate.swift */,
 				2662AA722459ADCB00FD3014 /* SceneDelegate.swift */,
 				2662AA742459ADCB00FD3014 /* ViewController.swift */,
@@ -126,6 +131,15 @@
 				2662AA942459ADD000FD3014 /* Info.plist */,
 			);
 			path = layoutDSLUITests;
+			sourceTree = "<group>";
+		};
+		2662AAA02459B7F900FD3014 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */,
+				2662AAA32459B86200FD3014 /* LayoutProxy.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +275,8 @@
 			files = (
 				2662AA752459ADCB00FD3014 /* ViewController.swift in Sources */,
 				2662AA712459ADCB00FD3014 /* AppDelegate.swift in Sources */,
+				2662AAA22459B80D00FD3014 /* LayoutAnchor.swift in Sources */,
+				2662AAA42459B86200FD3014 /* LayoutProxy.swift in Sources */,
 				2662AA732459ADCB00FD3014 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

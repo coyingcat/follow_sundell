@@ -28,19 +28,10 @@ class ViewController: UIViewController {
         
         label.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(
-                equalTo: button.bottomAnchor,
-                constant: 20
-            ),
-            label.leadingAnchor.constraint(
-                equalTo: button.leadingAnchor
-            ),
-            label.widthAnchor.constraint(
-                lessThanOrEqualTo: view.widthAnchor,
-                constant: -40
-            )
-        ])
+        let proxy = LayoutProxy(view: label)
+        proxy.top.equal(to: button.bottomAnchor, offsetBy: 20)
+        proxy.leading.equal(to: button.leadingAnchor)
+        proxy.width.lessThanOrEqual(to: view.widthAnchor, offsetBy: -40)
         
     }
 
