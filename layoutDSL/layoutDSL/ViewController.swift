@@ -24,15 +24,12 @@ class ViewController: UIViewController {
         
         view.addSubview(button)
         view.addSubview(label)
-        
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
 
-        let proxy = LayoutProxy(view: label)
-        proxy.top.equal(to: button.bottomAnchor, offsetBy: 20)
-        proxy.leading.equal(to: button.leadingAnchor)
-        proxy.width.lessThanOrEqual(to: view.widthAnchor, offsetBy: -40)
-        
+        label.layout {
+            $0.top.equal(to: button.bottomAnchor, offsetBy: 20)
+            $0.leading.equal(to: button.leadingAnchor)
+            $0.width.lessThanOrEqual(to: view.widthAnchor, offsetBy: -40)
+        }
     }
 
 

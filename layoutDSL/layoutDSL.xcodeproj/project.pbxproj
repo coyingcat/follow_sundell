@@ -17,6 +17,7 @@
 		2662AA932459ADD000FD3014 /* layoutDSLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AA922459ADD000FD3014 /* layoutDSLUITests.swift */; };
 		2662AAA22459B80D00FD3014 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */; };
 		2662AAA42459B86200FD3014 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662AAA32459B86200FD3014 /* LayoutProxy.swift */; };
+		26F6C4B5245A8D7D00D95963 /* Extern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F6C4B4245A8D7D00D95963 /* Extern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2662AA942459ADD000FD3014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		2662AAA32459B86200FD3014 /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
+		26F6C4B4245A8D7D00D95963 /* Extern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extern.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				2662AAA12459B80D00FD3014 /* LayoutAnchor.swift */,
 				2662AAA32459B86200FD3014 /* LayoutProxy.swift */,
+				26F6C4B4245A8D7D00D95963 /* Extern.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2662AA752459ADCB00FD3014 /* ViewController.swift in Sources */,
+				26F6C4B5245A8D7D00D95963 /* Extern.swift in Sources */,
 				2662AA712459ADCB00FD3014 /* AppDelegate.swift in Sources */,
 				2662AAA22459B80D00FD3014 /* LayoutAnchor.swift in Sources */,
 				2662AAA42459B86200FD3014 /* LayoutProxy.swift in Sources */,
