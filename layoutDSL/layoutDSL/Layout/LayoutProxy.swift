@@ -13,7 +13,7 @@ import UIKit
 
 
 struct LayoutProperty<Anchor: LayoutAnchor> {
-    fileprivate let anchor: Anchor
+    let anchor: Anchor
 }
 
 
@@ -62,4 +62,8 @@ class LayoutProxy {
         
         return LayoutProperty(anchor: anchor)
     }
+    
+    
+    
+    
 }

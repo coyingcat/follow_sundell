@@ -26,11 +26,14 @@ class ViewController: UIViewController {
         view.addSubview(label)
 
        
-        label.layout {
-            $0.top == button.bottomAnchor + 20
+        label.put.layout {
+            $0.top == button.put.bottom + 20
             $0.leading == button.leadingAnchor
             $0.width <= view.widthAnchor - 40
         }
+        
+        
+        
     }
 
 
