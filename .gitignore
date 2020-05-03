@@ -16,10 +16,12 @@ xcodebuild
 
 Playgrounds/**/*.framework
 Playgrounds/iOS/
+
+
 # Cocoapods
-# Pods/
-# Podfile.lock
-# *.podspec.json
+Pods/
+Podfile.lock
+*.podspec.json
 
 # osx noise
 .DS_Store
