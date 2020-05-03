@@ -28,8 +28,8 @@ class ViewController: UIViewController {
        
         label.put.layout {
             $0.top == button.put.bottom + 20
-            $0.leading == button.leadingAnchor
-            $0.width <= view.widthAnchor - 40
+            $0.leading == button.put.leading
+            $0.width <= view.put.width - 40
         }
         
         

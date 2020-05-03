@@ -64,26 +64,26 @@ extension TypeWrapper where WrappedType: UIView {
         closure(LayoutProxy(view: wrapped))
     }
     
-    var bottom: LayoutProperty<NSLayoutAnchor<NSLayoutYAxisAnchor>>{
-        LayoutProperty(anchor: wrapped.bottomAnchor)
+    var bottom: NSLayoutYAxisAnchor{
+        wrapped.bottomAnchor
     }
     
-    var leading: LayoutProperty<NSLayoutAnchor<NSLayoutXAxisAnchor>>{
-        LayoutProperty(anchor: wrapped.leadingAnchor)
-    }
-    
-    
-    var width: LayoutProperty<NSLayoutAnchor<NSLayoutDimension>>{
-        LayoutProperty(anchor: wrapped.widthAnchor)
+    var leading: NSLayoutXAxisAnchor{
+        wrapped.leadingAnchor
     }
     
     
-    var centerX: LayoutProperty<NSLayoutAnchor<NSLayoutXAxisAnchor>>{
-        LayoutProperty(anchor: wrapped.centerXAnchor)
+    var width: NSLayoutDimension{
+        wrapped.widthAnchor
     }
     
-    var centerY: LayoutProperty<NSLayoutAnchor<NSLayoutYAxisAnchor>>{
-        LayoutProperty(anchor: wrapped.centerYAnchor)
+    
+    var centerX: NSLayoutXAxisAnchor{
+        wrapped.centerXAnchor
+    }
+    
+    var centerY: NSLayoutYAxisAnchor{
+        wrapped.centerYAnchor
     }
     
 }
