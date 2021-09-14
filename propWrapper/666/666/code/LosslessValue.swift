@@ -34,13 +34,14 @@ public struct LosslessValueCodable<Strategy: LosslessDecodingStrategy>: Codable 
             self.wrappedValue = try Strategy.Value.init(from: decoder)
             self.type = Strategy.Value.self
         } catch let error {
-            guard
-                let rawValue = Strategy.losslessDecodableTypes.lazy.compactMap({ $0(decoder) }).first,
-                let value = Strategy.Value.init("\(rawValue)")
-            else { throw error }
-
-            self.wrappedValue = value
-            self.type = Swift.type(of: rawValue)
+            for block in Strategy.losslessDecodableTypes{
+                if let rawVal = block(decoder), let value = Strategy.Value.init("\(rawVal)"){
+                    self.wrappedValue = value
+                    self.type = Swift.type(of: rawVal)
+                    return
+                }
+            }
+            throw error
         }
     }
 

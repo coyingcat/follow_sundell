@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         
         var dict: [String: Any] = ["name": "666", "age": 666]
-        dict = ["name": 666, "age": "666"]
+     //   dict = ["name": 666, "age": "666"]
         if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: []), let model = try? JSONDecoder().decode(Figure.self, from: jsonData){
             print(model.name, " - ", model.age)
             
