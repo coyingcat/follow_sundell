@@ -92,35 +92,7 @@ public struct LosslessDefaultStrategy<Value: LosslessStringCodable>: LosslessDec
     }
 }
 
-public struct LosslessBooleanStrategy<Value: LosslessStringCodable>: LosslessDecodingStrategy {
-    public static var losslessDecodableTypes: [(Decoder) -> LosslessStringCodable?] {
-        @inline(__always)
-        func decode<T: LosslessStringCodable>(_: T.Type) -> (Decoder) -> LosslessStringCodable? {
-            return { try? T.init(from: $0) }
-        }
 
-        @inline(__always)
-        func decodeBoolFromNSNumber() -> (Decoder) -> LosslessStringCodable? {
-            return { (try? Int.init(from: $0)).flatMap { Bool(exactly: NSNumber(value: $0)) } }
-        }
-
-        return [
-            decode(String.self),
-            decodeBoolFromNSNumber(),
-            decode(Bool.self),
-            decode(Int.self),
-            decode(Int8.self),
-            decode(Int16.self),
-            decode(Int64.self),
-            decode(UInt.self),
-            decode(UInt8.self),
-            decode(UInt16.self),
-            decode(UInt64.self),
-            decode(Double.self),
-            decode(Float.self),
-        ]
-    }
-}
 
 /// Decodes Codable values into their respective preferred types.
 ///
@@ -142,26 +114,3 @@ public struct LosslessBooleanStrategy<Value: LosslessStringCodable>: LosslessDec
 /// // value.id == "123"
 /// ```
 public typealias LosslessValue<T> = LosslessValueCodable<LosslessDefaultStrategy<T>> where T: LosslessStringCodable
-
-/// Decodes Codable values into their respective preferred types.
-///
-/// `@LosslessBoolValue` attempts to decode Codable types into their respective preferred types while preserving the data.
-///
-/// - Note:
-///  This uses a `LosslessBooleanStrategy` in order to prioritize boolean values, and as such, some integer values will be lossy.
-///
-///  For instance, if you decode `{ "some_type": 1 }` then `some_type` will be `true` and not `1`. If you do not want this
-///  behavior then use `@LosslessValue` or create a custom `LosslessDecodingStrategy`.
-///
-/// ```
-/// struct Example: Codable {
-///   @LosslessBoolValue var foo: Bool
-///   @LosslessValue var bar: Int
-/// }
-///
-/// // json: { "foo": 1, "bar": 2 }
-/// let value = try JSONDecoder().decode(Fixture.self, from: json)
-/// // value.foo == true
-/// // value.bar == 2
-/// ```
-public typealias LosslessBoolValue<T> = LosslessValueCodable<LosslessBooleanStrategy<T>> where T: LosslessStringCodable
