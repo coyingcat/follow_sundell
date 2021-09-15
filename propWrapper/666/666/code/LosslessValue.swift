@@ -34,12 +34,15 @@ public struct LosslessValueCodable<Strategy: LosslessDecodingStrategy>: Codable 
             self.wrappedValue = try Strategy.Value.init(from: decoder)
             self.type = Strategy.Value.self
         } catch let error {
+            var i = 0
             for block in Strategy.losslessDecodableTypes{
+                print(i)
                 if let rawVal = block(decoder), let value = Strategy.Value.init("\(rawVal)"){
                     self.wrappedValue = value
                     self.type = Swift.type(of: rawVal)
                     return
                 }
+                i += 1
             }
             throw error
         }
